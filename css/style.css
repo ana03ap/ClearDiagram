@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.image-container img {
+    position: absolute;
+    Width:1479px;
+    Height:730px;
+}
+
+.text-container {
+    position: relative; /* Make text container relative for positioning */
+    top: 90%; /* Position text container vertically in the middle */
+    transform: translateY(80%); /* Adjust vertical position with translateY */
+    color: rgb(0, 0, 0); /* Set text color to white for visibility on background */
+    font-family: 'ClearDiagram', sans-serif; /* Use ClearDiagram font */
+    text-align: center; /* Align text horizontally in the center */
+}
+
+.hero__title {
+font-size: 72px; /* Adjust font size as needed */
+margin: 0; /* Remove margin for better alignment */
+}
