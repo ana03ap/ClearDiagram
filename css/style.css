@@ -1,55 +1,135 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kaushan+Script&display=swap');
+
+/* Reset y estilos básicos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Kaushan Script", cursive;
-    font-weight: 400;
-    font-style: normal;
 }
 
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    font-family: 'DM Sans', sans-serif;
+    height: 100vh; 
+    background-color: rgb(202, 202, 202);
 }
 
+/*Estilo de contenedor de imagen*/
 .image-container {
     position: relative;
     width: 100%;
-    height: 100vh; 
+    height: 100vh;
     background: url('../images/fondoindex.jpg') no-repeat center center;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+/*Estilo del contenedor de texto*/
 .text-container {
-    position: absolute; 
-    top: 40%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgb(0, 0, 0); 
-    text-align: center; 
+    position: relative;
+    text-align: center;
+    background-color: none;
 }
 
+/* Estilo del título */
 .hero__title {
-    font-size: 72px; 
-    margin: 0;  
+    font-size: 72px;
+    color: black;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 100px; /*Espacio debajo del título*/
 }
 
+/*Estilo del contenedor del botón*/
+.button-container {
+    position: relative;
+    text-align: center;
+    z-index: 2
+}
+
+/*Estilo del botón de llamada a la acción*/
 .cta {
-    font-family: "DM Sans", sans-serif;
-    position: absolute; 
-    top: 70%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; 
     display: inline-block;
     background-color: #33C5A2;
-    justify-self: center;
     color: #000000;
     text-decoration: none;
     padding: 20px 80px;
     border-radius: 32px;
     font-weight: bold;
+    margin-bottom: 10px; /*Espacio debajo del botón*/
+    transition: background-color 0.3s ease;
 }
+
+.cta:hover {
+    background-color: #6ecfb8;
+}
+
+/* Estilo del texto de registro */
+.signup-text {
+    font-size: 16px;
+    color: black;
+}
+
+.signup-text a { /*Este es para el sign up como tal o sea par que hunda ahi*/
+    color: #33C5A2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* Estilo del título cleardiagram para el login*/
+.hero__titleLogin {
+    font-size: 72px;
+    color: black;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 200px; /*Espacio debajo del título*/
+}
+
+
+/* Estilo de contenedor de imagen login */
+.imageLogin-container {
+    position: absolute; 
+    width: 100%;
+    height: 70vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo de la imagen de fondo */
+.imgLogin {
+    position: absolute; 
+    width: 100%;
+    height: 100%; 
+    background: url('../images/fondoindex.jpg') no-repeat center center;
+    background-size: cover;
+    filter: brightness(0.9); 
+    box-shadow: 0 0 20px rgba(163, 157, 157, 0.34);
+}
+
+.Loginbox {
+    position: absolute;
+    top: 90%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: #ffffff; 
+    padding: 190px 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    z-index: 1;
+    
+}
+
 
