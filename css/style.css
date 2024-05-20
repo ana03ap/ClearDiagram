@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kaushan+Script&display=swap');
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,28 +8,48 @@
     font-style: normal;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
-.image-container img {
-    position: absolute;
-    Width:1479px;
-    Height:730px;
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    background: url('../images/fondoindex.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 .text-container {
-    position: relative; /* Make text container relative for positioning */
-    top: 90%; /* Position text container vertically in the middle */
-    transform: translateY(80%); /* Adjust vertical position with translateY */
-    color: rgb(0, 0, 0); /* Set text color to white for visibility on background */
-    font-family: 'ClearDiagram', sans-serif; /* Use ClearDiagram font */
-    text-align: center; /* Align text horizontally in the center */
+    position: absolute; 
+    top: 40%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0); 
+    text-align: center; 
 }
 
 .hero__title {
-font-size: 72px; /* Adjust font size as needed */
-margin: 0; /* Remove margin for better alignment */
+    font-size: 72px; 
+    margin: 0;  
 }
+
+.cta {
+    font-family: "DM Sans", sans-serif;
+    position: absolute; 
+    top: 70%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; 
+    display: inline-block;
+    background-color: #33C5A2;
+    justify-self: center;
+    color: #000000;
+    text-decoration: none;
+    padding: 20px 80px;
+    border-radius: 32px;
+    font-weight: bold;
+}
+
