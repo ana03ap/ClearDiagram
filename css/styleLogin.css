@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kaushan+Script&display=swap');
+
+/* Reset y estilos básicos */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    height: 100vh; 
+    background-color: rgb(202, 202, 202);
+} */
+
+/* 
+.text-container {
+    position: relative;
+    text-align: center;
+    background-color: none;
+}
+
+
+.button-container {
+    position: relative;
+    text-align: center;
+    z-index: 2
+}
+
+
+.cta {
+    display: inline-block;
+    background-color: #33C5A2;
+    color: #000000;
+    text-decoration: none;
+    padding: 20px 80px;
+    border-radius: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+    background-color: #6ecfb8;
+}
+
+
+.signup-text {
+    font-size: 16px;
+    color: black;
+}
+
+.signup-text a { 
+    color: #33C5A2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+
+
+.hero__titleLogin {
+    font-size: 72px;
+    color: black;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 200px; 
+}
+
+
+
+.imageLogin-container {
+    position: absolute; 
+    width: 100%;
+    height: 70vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.imgLogin {
+    position: absolute; 
+    width: 100%;
+    height: 100%; 
+    background: url('../images/fondoindex.jpg') no-repeat center center;
+    background-size: cover;
+    filter: brightness(0.9); 
+    box-shadow: 0 0 20px rgba(163, 157, 157, 0.34);
+}
+
+.Loginbox {
+    position: absolute;
+    top: 90%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: #ffffff; 
+    padding: 190px 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    z-index: 1;
+    
+}
+
+ */
+
+
+
+
+ *{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'DM Sans', sans-serif;
+ }
+
+ html,body{
+   display: grid;
+   height: 100%;
+   width: 100%;
+   place-items: center;
+ }
+
+ .hero__titleLogin {
+     margin-top: 2pc;
+    font-size: 72px;
+    color: black;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 200px; 
+}
+
+
+ ::selection{
+   background: #33C5A2;
+   color: #fff;
+ }
+
+
+ #wave{
+     text-align: center;
+ }
+ .wrapper{
+   overflow: hidden;
+   max-width: 390px;
+   background: #fff;
+   padding: 30px;
+   border-radius: 15px;
+   box-shadow: rgb(55, 58, 61) 0px 20px 30px -10px;
+ }
+ .wrapper .title-text{
+   display: flex;
+   width: 200%;
+ }
+ .wrapper .title{
+   width: 50%;
+   font-size: 35px;
+   font-weight: 600;
+   text-align: center;
+   transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+ }
+ .wrapper .slide-controls{
+   position: relative;
+   display: flex;
+   height: 50px;
+   width: 100%;
+   overflow: hidden;
+   margin: 30px 0 10px 0;
+   justify-content: space-between;
+   border: 1px solid lightgrey;
+   border-radius: 15px;
+ }
+ .slide-controls .slide{
+   height: 100%;
+   width: 100%;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   text-align: center;
+   line-height: 48px;
+   cursor: pointer;
+   z-index: 1;
+   transition: all 0.6s ease;
+ }
+ .slide-controls label.signup{
+   color: #000;
+ }
+ .slide-controls .slider-tab{
+   position: absolute;
+   height: 100%;
+   width: 50%;
+   left: 0;
+   z-index: 0;
+   border-radius: 15px;
+   background: -webkit-linear-gradient(left,#55b9a2,#52a592,#6ecfb8
+ , #7bebd0);
+   transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+ }
+ input[type="radio"]{
+   display: none;
+ }
+ #signup:checked ~ .slider-tab{
+   left: 50%;
+ }
+ #signup:checked ~ label.signup{
+   color: #fff;
+   cursor: default;
+   user-select: none;
+ }
+ #signup:checked ~ label.login{
+   color: #000;
+ }
+ #login:checked ~ label.signup{
+   color: #000;
+ }
+ #login:checked ~ label.login{
+   cursor: default;
+   user-select: none;
+ }
+ .wrapper .form-container{
+   width: 100%;
+   overflow: hidden;
+ }
+ .form-container .form-inner{
+   display: flex;
+   width: 200%;
+ }
+ .form-container .form-inner form{
+   width: 50%;
+   transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+ }
+ .form-inner form .field{
+   height: 50px;
+   width: 100%;
+   margin-top: 20px;
+ }
+ .form-inner form .field input{
+   height: 100%;
+   width: 100%;
+   outline: none;
+   padding-left: 15px;
+   border-radius: 15px;
+   border: 1px solid lightgrey;
+   border-bottom-width: 2px;
+   font-size: 17px;
+   transition: all 0.3s ease;
+ }
+ .form-inner form .field input:focus{
+   border-color: #065745;
+
+ }
+ .form-inner form .field input::placeholder{
+   color: #999;
+   transition: all 0.3s ease;
+ }
+ form .field input:focus::placeholder{
+   color: #065745;
+ }
+ .form-inner form .pass-link{
+   margin-top: 5px;
+ }
+ .form-inner form .signup-link{
+   text-align: center;
+   margin-top: 30px;
+ }
+ .form-inner form .pass-link a,
+ .form-inner form .signup-link a{
+   color: #065745;
+   text-decoration: none;
+ }
+ .form-inner form .pass-link a:hover,
+ .form-inner form .signup-link a:hover{
+   text-decoration: underline;
+ }
+ form .btn{
+   height: 50px;
+   width: 100%;
+   border-radius: 15px;
+   position: relative;
+   overflow: hidden;
+ }
+ form .btn .btn-layer{
+   height: 100%;
+   width: 300%;
+   position: absolute;
+   left: -100%;
+   background: -webkit-linear-gradient(left,#55b9a2,#52a592,#6ecfb8
+ , #7bebd0);
+   border-radius: 15px;
+   transition: all 0.4s ease;;
+ }
+ form .btn:hover .btn-layer{
+   left: 0;
+ }
+ form .btn input[type="submit"]{
+   height: 100%;
+   width: 100%;
+   z-index: 1;
+   position: relative;
+   background: none;
+   border: none;
+   color: #fff;
+   padding-left: 0;
+   border-radius: 15px;
+   font-size: 20px;
+   font-weight: 500;
+   cursor: pointer;
+ }
+ 

@@ -5,20 +5,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleLogin.css">
 </head>
 <body>
-    <div class="imageLogin-container">
+
+    <h1 class="hero__titleLogin">ClearDiagram</h1>
+
+    <div class="wrapper">
+        <div class="title-text">
+          <div class="title login">LogIn Form</div>
+          <div class="title signup">SignUp Form</div>
+        </div>
+        <div class="form-container">
+          <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked>
+            <input type="radio" name="slide" id="signup">
+            <label for="login" class="slide login">Login</label>
+            <label for="signup" class="slide signup">SignUp</label>
+            <div class="slider-tab"></div>
+          </div>
+
+          <div id="wave">Welcome to <strong>ClearDiagram!</strong> </div>
+          <div class="form-inner">
+            <form action="#" class="login">
+              <pre>
+              </pre>
+              <div class="field">
+                <input type="text" placeholder="Email Address" required>
+              </div>
+              <div class="field">
+                <input type="password" placeholder="Password" required>
+              </div>
+              <div class="pass-link"><a href="#">Forgot password?</a></div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Login">
+              </div>
+              <div class="signup-link">Create an account <a href="">SignUp now</a></div>
+            </form>
+            <form action="#" class="signup">
+              <div class="field">
+                <input type="text" placeholder="Name" required>
+              </div>
+              <div class="field">
+                <input type="text" placeholder="Email Address" required>
+              </div>
+              <div class="field">
+                <input type="password" placeholder="Password" required>
+              </div>
+              <div class="field">
+                <input type="password" placeholder="Confirm password" required>
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Signup">
+              </div>
+              <div class="signup-link">Already have an account? <a href="">Login</a></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    <script  src="./script.js"></script>
+
+    <!-- <div class="imageLogin-container">
         <div class="imgLogin"></div>
         <div class="text-container">
             <h1 class="hero__titleLogin">ClearDiagram</h1>
+            <div id="btns">
+                <button>login</button>
+                <button>Sign in</button>
+            </div>
+            
             <div class="button-container"> 
                 <a href="#" class="cta">Log in</a>
                 <p class="signup-text">Forgot password? </p>
             </div>
             <div class="Loginbox"></div>
         </div>
-    </div>
+    </div> -->
+
+
+
 </body>
 </html>
 
