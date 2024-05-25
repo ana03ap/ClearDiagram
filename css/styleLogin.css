@@ -124,16 +124,19 @@ body {
    height: 100%;
    width: 100%;
    place-items: center;
+   background: url('../images/fondoindex.jpg') no-repeat center center; 
+   background-size: cover;
  }
 
- .hero__titleLogin {
-     margin-top: 2pc;
-    font-size: 72px;
-    color: black;
-    font-family: 'Kaushan Script', cursive;
-    font-weight: 400;
-    font-style: normal;
-    margin-bottom: 200px; 
+
+.hero__titleLogin {
+  margin-top: 2pc;
+  font-size: 72px;
+  color: black;
+  font-family: 'Kaushan Script', cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 60px; /* Reducir el margen inferior */
 }
 
 
@@ -146,18 +149,26 @@ body {
  #wave{
      text-align: center;
  }
- .wrapper{
-   overflow: hidden;
-   max-width: 390px;
-   background: #fff;
-   padding: 30px;
-   border-radius: 15px;
-   box-shadow: rgb(55, 58, 61) 0px 20px 30px -10px;
- }
+
+.wrapper {
+  overflow: hidden;
+  max-width: 390px;
+  max-height: 600px;
+  background: #fff;
+  padding: 20px; 
+  border-radius: 15px;
+  box-shadow: rgb(55, 58, 61) 0px 20px 30px -10px;
+  margin-top: -20px; 
+  margin-bottom: 20px; 
+
+}
+
+
  .wrapper .title-text{
    display: flex;
    width: 200%;
  }
+
  .wrapper .title{
    width: 50%;
    font-size: 35px;
