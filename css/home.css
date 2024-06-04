@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .select {
@@ -16,6 +16,18 @@
     text-transform: uppercase;
     text-decoration: none;
     transition: background-color 0.3s;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../images/fondoindex.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .select:hover {
@@ -38,15 +50,15 @@
     text-align: center;
 }
 
-.subtitle{
+.diagram .subtitle{
     color: #111111;
     font-size: 50px;
-    text-transform: uppercase;
-    margin-bottom: 50px;
+    margin-top: 50px;
+    font-weight: bold;
 }
 
 .diagram__table{
-    padding-top: 60px;
+    padding-top: 80px;
     display: flex;
     flex-wrap: wrap;
     gap: 2.5em;
@@ -55,43 +67,16 @@
 }
 
 .diagram__element{
-    background-color: #e5e5f7;
+    background-color: #33C5A2;
     text-align: center;
     border-radius: 10px;
     width: 330px;
     padding: 40px;
-    --color-plan: #696871;
-    --color-price: #1D293F;
     --bg-cta: #fff;
-    --color-cta: #5454D4;
+    --color-cta: #000000;
     --color-items: #696871;
 }
 
-.diagram__elementtt{
-    background-color: #e2aef0;
-    text-align: center;
-    border-radius: 10px;
-    width: 330px;
-    padding: 40px;
-    --color-plan: #696871;
-    --color-price: #1D293F;
-    --bg-cta: #fff;
-    --color-cta: #5454D4;
-    --color-items: #696871;
-}
-
-.diagram__elementt{
-    background-color: #f0dfae;
-    text-align: center;
-    border-radius: 10px;
-    width: 330px;
-    padding: 40px;
-    --color-plan: #696871;
-    --color-price: #1D293F;
-    --bg-cta: #fff;
-    --color-cta: #5454D4;
-    --color-items: #696871;
-}
 
 
 .diagram__name{
@@ -125,4 +110,12 @@
     font-weight: 600;
     color: var(--color-cta);
     box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+}
+
+.diagram__cta:hover {
+    background-color: #c5c5c5; /* Cambia el color al pasar el mouse */
+}
+
+.btn-1 {
+    margin-top: auto; /* Esto empuja el botón hacia abajo */
 }
