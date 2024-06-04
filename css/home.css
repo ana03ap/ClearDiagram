@@ -4,8 +4,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'DM Sans', sans-serif;
+
 }
 
+
+body{
+    
+    background: url('../images/fondoindex.jpg') repeat center center;
+    background-size: cover;
+}
 .select {
     display: inline-block;
     padding: 10px 20px;
@@ -21,9 +28,8 @@
 .image-container {
     position: relative;
     width: 100%;
-    height: 100vh;
-    background: url('../images/fondoindex.jpg') no-repeat center center;
-    background-size: cover;
+   
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,8 +75,12 @@
 .diagram__element{
     background-color: #33C5A2;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     border-radius: 10px;
-    width: 330px;
+    width: 30%;
     padding: 40px;
     --bg-cta: #fff;
     --color-cta: #000000;
@@ -103,7 +113,7 @@
 
 .diagram__cta{
     display: block;
-    padding: 20px 0;
+    padding: 20px 20px;
     border-radius: 10px;
     text-decoration: none;
     background-color: var(--bg-cta);
