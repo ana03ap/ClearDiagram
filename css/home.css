@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.select {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000000; /* Cambia el color de fondo */
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.select:hover {
+    background-color: #4e7c52; /* Cambia el color al pasar el mouse */
+}
+
+.btn-1 {
+    margin-top: auto; /* Esto empuja el botón hacia abajo */
+}
+
+.diagrama img{
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+/* diagram */
+
+.diagram{
+    text-align: center;
+}
+
+.subtitle{
+    font-size: 20px;
+}
+.diagram__table{
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.diagram__element{
+    background-color: #e5e5f7;
+    text-align: center;
+    border-radius: 10px;
+    width: 330px;
+    padding: 40px;
+    --color-plan: #696871;
+    --color-price: #1D293F;
+    --bg-cta: #fff;
+    --color-cta: #5454D4;
+    --color-items: #696871;
+}
+
+.diagram__elementtt{
+    background-color: #e2aef0;
+    text-align: center;
+    border-radius: 10px;
+    width: 330px;
+    padding: 40px;
+    --color-plan: #696871;
+    --color-price: #1D293F;
+    --bg-cta: #fff;
+    --color-cta: #5454D4;
+    --color-items: #696871;
+}
+
+.diagram__elementt{
+    background-color: #f0dfae;
+    text-align: center;
+    border-radius: 10px;
+    width: 330px;
+    padding: 40px;
+    --color-plan: #696871;
+    --color-price: #1D293F;
+    --bg-cta: #fff;
+    --color-cta: #5454D4;
+    --color-items: #696871;
+}
+
+
+.diagram__name{
+    color: var(--color-plan);
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.diagram__diagram{
+    font-size: 20px;
+    color: var(--color-price);
+    margin-bottom: 8%;
+}
+
+.diagram__items{
+    margin-top: 35px;
+    display: grid;
+    gap: 1em;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: var(--color-items);
+}
+
+.diagram__cta{
+    display: block;
+    padding: 20px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: var(--bg-cta);
+    font-weight: 600;
+    color: var(--color-cta);
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+}

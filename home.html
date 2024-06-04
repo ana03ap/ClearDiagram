@@ -7,22 +7,44 @@
     <link rel="stylesheet" href="">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Home</title>
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
     <h1>welcome to ClearDiagram</h1>
 
-    <!-- aqui no se ponerlo bonito para escoger que diagrama quiere hacer  -->
+    <section class="diagram container">
+      <h2 class="subtitle">¿Qué diagrama quieres seleccionar?</h2>
 
-    <h1>que diagrama vas a hacer?</h1>
+      <div class="diagram__table">
 
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-        <a href="requirementModel.html">modelo de requerimientos</a>
-        
-      </button>
+          <div class="diagram__element">
+              <h3 class="diagram__diagram">Diagrama de Requerimientos</h3>
+              <div class="diagrama">
+                <img src="images/req.jpg" alt="">
+              </div>
+              <a href="requirementModel.html" class="diagram__cta">Empieza ahora</a>
+          </div>
 
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-        <a href="flowchart.html">diagrama de flujo</a>
-     
-      </button>
+
+          <div class="diagram__elementt">
+              <h3 class="diagram__diagram">Diagrama de Clases</h3>
+              <div class="diagrama">
+                <img src="images/clase.png" alt="">
+              </div>
+              <a href="#" class="diagram__cta">Empieza ahora</a>
+          </div>
+
+
+          <div class="diagram__elementtt">
+              <h3 class="diagram__diagram">Diagrama de Flujo</h3>
+              <div class="diagrama">
+                <img src="images/flujo.png" alt="">
+              </div>
+              <a href="flowchart.html" class="diagram__cta">Empieza ahora</a>
+          </div>
+
+
+      </div>
+  </section>
 </body>
 </html>
