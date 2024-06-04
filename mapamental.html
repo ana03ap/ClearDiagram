@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
-<title>Modelo de requerimientos con GoJS</title>
+<title>Mapa mental con GoJS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
@@ -10,7 +10,7 @@
   <div class="flex justify-center py-10 flex-col items-center">
     <div
       class="flex justify-center p-2 px-12 bg-blue-800 items-center text-blue-100 leading-none lg:rounded-full flex lg:inline-flex">
-      <span class="font-bold mr-2 text-left flex-auto text-4xl">Modelo de Requerimientos</span>
+      <span class="font-bold mr-2 text-left flex-auto text-4xl">MAPA MENTAL</span>
     </div>
 
     <br>
@@ -76,10 +76,9 @@
         myDiagram.themeManager.set('light', {
           colors: {
             text: '#fff',
-            start: '#064e3b',
-            step: '#49939e',
+            
             conditional: '#6a9a8a',
-            end: '#7f1d1d',
+            
             comment: '#a691cc',
             bgText: '#000',
             link: '#dcb263',
@@ -91,7 +90,7 @@
         myDiagram.themeManager.set('dark', {
           colors: {
             text: '#fff',
-            step: '#414a8d',
+            
             conditional: '#88afa2',
             comment: '#bfb674',
             bgText: '#fff',
@@ -125,21 +124,17 @@
         }
 
         // define the Node templates for regular nodes
+      
+
         myDiagram.nodeTemplateMap.add(
-          '', // the default category
+          'Conditional',
           new go.Node('Auto').apply(nodeStyle).add(
-            new go.Shape('Rectangle', {
-              fromLinkable: true,
-              toLinkable: true,
-              fromSpot: go.Spot.AllSides,
-              toSpot: go.Spot.AllSides,
-            })
-              .apply(shapeStyle)
-              .theme('fill', 'step'),
+            new go.Shape('Capsule', { fromLinkable: true, toLinkable: true }).apply(shapeStyle).theme('fill', 'conditional'),
             new go.TextBlock({
-              margin: 12,
-              maxSize: new go.Size(200, NaN),
+              margin: 8,
+              maxSize: new go.Size(160, NaN),
               wrap: go.Wrap.Fit,
+              textAlign: 'center',
               editable: true,
             })
               .apply(textStyle)
@@ -147,7 +142,8 @@
           )
         );
 
-      
+        
+
         myDiagram.nodeTemplateMap.add(
           'Comment',
           new go.Node('Auto').apply(nodeStyle).add(
@@ -238,8 +234,8 @@
             model: new go.GraphLinksModel([
               // specify the contents of the Palette
              
-              { category: 'Conditional', text: 'Requerimiento' },
-              
+              { category: 'Conditional', text: 'Texto' },
+             
               { category: 'Comment', text: 'Comment' },
             ]),
           }
@@ -339,7 +335,7 @@
       <div class="sampleWrapper">
         <div style="width: 100%; height: fit-content; display: flex; flex: 2">
           <div id="myPaletteDiv"
-            style="width: 150px; margin-right: 2px ;position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); background-color: rgb(20, 30, 55); cursor: auto;">
+            style="width: 100px; margin-right: 2px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); background-color: rgb(20, 30, 55); cursor: auto;">
             <canvas tabindex="0" width="150" height="1215"
               style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 100px; height: 810px; cursor: auto;"></canvas>
             <div style="position: absolute; overflow: auto; width: 100px; height: 810px; z-index: 1;">
@@ -374,22 +370,16 @@
 
           <textarea id="mySavedModel" style="width: 100%; height: 375px; border: 1px black solid;">{ "class": "GraphLinksModel",
             "nodeDataArray": [
-          {"category":"Conditional","text":"Requerimiento 1\n","key":-14,"loc":"-235.83492770791668 83.33334350585938"},
-          {"text":"Requerimiento1. 1\n","key":-5,"loc":"-135.0002581797251 214.16665649414062"},
-          {"text":"Requerimiento 2. 1\n","key":-6,"loc":"390.0011218298504 226.66668701171875"},
-          {"category":"Comment","text":"GraphLinksModel\nalso allows Groups","key":-7,"loc":"209.49920204994783 -84.16668701171875"},
-          {"text":"Nombre","key":-9,"loc":"37.3325995138282 -92.33332824707031"},
-          {"text":"Requerimiento 2 .2\n","key":-12,"loc":"429.16802945545953 325"},
-          {"text":"Requerimiento 1. 2\n","key":-13,"loc":"-98.33330360034643 320.00006103515625"},
-          {"category":"Conditional","text":"Requerimiento 2\n","key":-8,"loc":"338.52361076029024 99.73179626464844"}
+          {"category":"Conditional","text":"Is data\ntree-like?","key":-14,"loc":"255 267"},
+          {"text":"Use a TreeModel","key":-5,"loc":"-100 230"},
+          {"category":"Comment","text":"GraphLinksModel\nalso allows Groups","key":-7,"loc":"435 183"},
+          {"category":"Conditional","text":"Should nodes be auto-positioned?","key":-16,"loc":"-41 251"},
+          {"category":"Conditional","text":"Is data\ntree-like?","key":-6,"loc":"648 272"}
           ],
             "linkDataArray": [
-          {"from":-5,"to":-13,"points":[-135.0002581797251,242.4231231689453,-135.0002581797251,252.4231231689453,-135.0002581797251,267.08335876464844,-98.33330360034643,267.08335876464844,-98.33330360034643,281.74359436035155,-98.33330360034643,291.74359436035155]},
-          {"from":-6,"to":-12,"points":[390.0011218298504,254.92315368652342,390.0011218298504,264.9231536865234,390.0011218298504,275.8333435058594,429.16802945545953,275.8333435058594,429.16802945545953,286.7435333251953,429.16802945545953,296.7435333251953]},
-          {"from":-14,"to":-5,"text":"","points":[-235.83492770791668,111.58981018066407,-235.83492770791668,121.58981018066407,-235.83492770791668,148.75,-135.0002581797251,148.75,-135.0002581797251,175.91018981933593,-135.0002581797251,185.91018981933593]},
-          {"from":-9,"to":-14,"points":[24.231189601718825,-72.20509490966798,24.231189601718825,-62.20509490966798,24.231189601718825,-8.564109039306643,-235.83492770791668,-8.564109039306643,-235.83492770791668,45.07687683105469,-235.83492770791668,55.07687683105469]},
-          {"from":-9,"to":-8,"points":[50.434009425937575,-72.20509490966798,50.434009425937575,-62.20509490966798,50.434009425937575,-0.3648826599121122,338.52361076029024,-0.3648826599121122,338.52361076029024,61.47532958984375,338.52361076029024,71.47532958984375]},
-          {"from":-8,"to":-6,"points":[338.52361076029024,127.98826293945314,338.52361076029024,137.98826293945314,338.52361076029024,163.1992416381836,390.0011218298504,163.1992416381836,390.0011218298504,188.41022033691405,390.0011218298504,198.41022033691405]}
+          {"from":-14,"to":-5,"text":"Yes","points":[255,231.74350774010946,255,221.74350774010946,255,123.08934649090435,190.87261199951172,123.08934649090435,190.87261199951172,24.43518524169922,190.87261199951172,14.43518524169922]},
+          {"from":-16,"to":-14,"points":[53.72477713296573,251,63.72477713296573,251,125.57855708100071,251,125.57855708100071,267,187.4323370290357,267,197.4323370290357,267]},
+          {"from":-14,"to":-6,"points":[312.56766297096436,267,322.56766297096436,267,451.5,267,451.5,272,580.4323370290357,272,590.4323370290357,272]}
           ]}
       </textarea>
 
