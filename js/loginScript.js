@@ -16,3 +16,13 @@ const signupLink = document.querySelector("form .signup-link a");
         signupBtn.click();
         return false;
       });
+
+      loginForm.onsubmit = (e) => {
+        e.preventDefault();
+        window.location.href = "home.html";
+      };
+
+      signupBtn.onsubmit = (e) => {
+        e.preventDefault();
+        window.location.href = "home.html";
+      };
