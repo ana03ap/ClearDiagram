@@ -7,24 +7,33 @@
 
 <body>
   <script src="https://unpkg.com/gojs@3.0.3/release/go.js"></script>
-  <div class="flex flex-row" style="margin-top: 5%;">
-    <div class= "flex-shrink-0 mx-auto">
-      <div class="bg-blue-800 text-white p-2 px-8 lg:rounded-full justify-center">
-        <span class="font-bold mr-2 text-3xl">MAPA MENTAL</span>
-      </div>
+  <div class="flex justify-center py-10 flex-col items-center">
+    <div
+      class="flex justify-center p-2 px-12 bg-blue-800 items-center text-blue-100 leading-none lg:rounded-full flex lg:inline-flex">
+      <span class="font-bold mr-2 text-left flex-auto text-4xl">MAPA MENTAL</span>
     </div>
-  
-    <div class="theme-container flex items-center" style="position: absolute; padding-left: 1%;">
-      <label for="theme" class="text-lg text-gray-700">Theme:</label>
-      <select id="theme" onchange="changeTheme()" class="ml-2 p-1 border rounded bg-gray-200 text-gray-800 text-sm">
-        <option value="system">System</option>
-        <option value="light">Light</option>
-        <option value="dark" selected>Dark</option>
-      </select>
-      <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-2 rounded inline-flex items-center ml-1 text-sm" onclick="printDiagram()">Print Diagram</button>
-    </div>
+
+    <br>
+    <br>
+    <label for="theme" class="text-xl">Theme:</label>
+    <select id="theme" onchange="changeTheme()" class="mt-2 p-2 border rounded">
+      <option value="system">System</option>
+      <option value="light">Light</option>
+      <option value="dark" selected>Dark</option>
+    </select>
+    <br>
+    <br>
+    <button
+      class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center'
+      onclick="printDiagram()">Print Diagram
+    </button>
   </div>
+
+
   
+
+
+
   <div id="allSampleContent" class="p-4 w-full">
 
 
@@ -322,67 +331,68 @@
       });
     </script>
 
-<div id="sample">
-  <div class="sampleWrapper">
-    <div style="width: 100%; height: fit-content; display: flex; flex: 2">
-      <div id="myPaletteDiv"
-        style="width: 100px; margin-right: 2px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); background-color: rgb(20, 30, 55); cursor: auto;">
-        <canvas tabindex="0" width="150" height="1215"
-          style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 100px; height: 810px; cursor: auto;"></canvas>
-        <div style="position: absolute; overflow: auto; width: 100px; height: 810px; z-index: 1;">
-          <div style="position: absolute; width: 1px; height: 1px;"></div>
+    <div id="sample">
+      <div class="sampleWrapper">
+        <div style="width: 100%; height: fit-content; display: flex; flex: 2">
+          <div id="myPaletteDiv"
+            style="width: 100px; margin-right: 2px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); background-color: rgb(20, 30, 55); cursor: auto;">
+            <canvas tabindex="0" width="150" height="1215"
+              style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 100px; height: 810px; cursor: auto;"></canvas>
+            <div style="position: absolute; overflow: auto; width: 100px; height: 810px; z-index: 1;">
+              <div style="position: absolute; width: 1px; height: 1px;"></div>
+            </div>
+          </div>
+          <div id="myDiagramDiv"
+            style="flex-grow: 1; height: 810px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); background-color: rgb(20, 30, 55); cursor: auto; font: bold 11pt Figtree, sans-serif;">
+            <canvas tabindex="0" width="1632" height="1215"
+              style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 1088px; height: 810px; cursor: auto;"></canvas>
+            <div style="position: absolute; overflow: auto; width: 1088px; height: 810px; z-index: 1;">
+              <div style="position: absolute; width: 1px; height: 1px;"></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div id="myDiagramDiv"
-        style="flex-grow: 1; height: 810px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); background-color: rgb(20, 30, 55); cursor: auto; font: bold 11pt Figtree, sans-serif;">
-        <canvas tabindex="0" width="1632" height="1215"
-          style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 1088px; height: 810px; cursor: auto;"></canvas>
-        <div style="position: absolute; overflow: auto; width: 1088px; height: 810px; z-index: 1;">
-          <div style="position: absolute; width: 1px; height: 1px;"></div>
-        </div>
-      </div>
-    </div>
-    <div style="flex: 1; min-width: 425px">
-     
-     
-      <div class="flex justify-center py-10">
-        <div
-          class="flex justify-center p-2 px-12 bg-blue-800 items-center text-blue-100 leading-none lg:rounded-full flex lg:inline-flex">
-          <span class="px-2 font-bold mr-2 text-left flex-auto text-4xl">Diagram Model saved in JSON format</span>
-        </div>
-      </div>
-    
-      <div class="inline-flex">
-        <button class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l' id="SaveButton"
-          onclick="save()">Save</button>
-        <button class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r'
-          onclick="load()">Load</button>
-      </div>
+        <div style="flex: 1; min-width: 425px">
+         
+         
+          <div class="flex justify-center py-10">
+            <div
+              class="flex justify-center p-2 px-12 bg-blue-800 items-center text-blue-100 leading-none lg:rounded-full flex lg:inline-flex">
+              <span class="px-2 font-bold mr-2 text-left flex-auto text-4xl">Diagram Model saved in JSON format</span>
+            </div>
+          </div>
+        
+          <div class="inline-flex">
+            <button class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l' id="SaveButton"
+              onclick="save()">Save</button>
+            <button class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r'
+              onclick="load()">Load</button>
+          </div>
 
-      <textarea id="mySavedModel" style="width: 100%; height: 375px; border: 1px black solid;">{ "class": "GraphLinksModel",
-        "nodeDataArray": [
-      {"category":"Conditional","text":"Is data\ntree-like?","key":-14,"loc":"255 267"},
-      {"category":"Comment","text":"GraphLinksModel\nalso allows Groups","key":-7,"loc":"435 183"},
-      {"category":"Conditional","text":"Should nodes be auto-positioned?","key":-16,"loc":"-41 251"},
-      {"category":"Conditional","text":"Is data\ntree-like?","key":-6,"loc":"648 272"}
-      ],
-        "linkDataArray": [
-      {"from":-14,"to":-5,"text":"Yes","points":[255,231.74350774010946,255,221.74350774010946,255,123.08934649090435,190.87261199951172,123.08934649090435,190.87261199951172,24.43518524169922,190.87261199951172,14.43518524169922]},
-      {"from":-16,"to":-14,"points":[53.72477713296573,251,63.72477713296573,251,125.57855708100071,251,125.57855708100071,267,187.4323370290357,267,197.4323370290357,267]},
-      {"from":-14,"to":-6,"points":[312.56766297096436,267,322.56766297096436,267,451.5,267,451.5,272,580.4323370290357,272,590.4323370290357,272]}
-      ]}
+          <textarea id="mySavedModel" style="width: 100%; height: 375px; border: 1px black solid;">{ "class": "GraphLinksModel",
+            "nodeDataArray": [
+          {"category":"Conditional","text":"Is data\ntree-like?","key":-14,"loc":"255 267"},
+          {"text":"Use a TreeModel","key":-5,"loc":"-100 230"},
+          {"category":"Comment","text":"GraphLinksModel\nalso allows Groups","key":-7,"loc":"435 183"},
+          {"category":"Conditional","text":"Should nodes be auto-positioned?","key":-16,"loc":"-41 251"},
+          {"category":"Conditional","text":"Is data\ntree-like?","key":-6,"loc":"648 272"}
+          ],
+            "linkDataArray": [
+          {"from":-14,"to":-5,"text":"Yes","points":[255,231.74350774010946,255,221.74350774010946,255,123.08934649090435,190.87261199951172,123.08934649090435,190.87261199951172,24.43518524169922,190.87261199951172,14.43518524169922]},
+          {"from":-16,"to":-14,"points":[53.72477713296573,251,63.72477713296573,251,125.57855708100071,251,125.57855708100071,267,187.4323370290357,267,197.4323370290357,267]},
+          {"from":-14,"to":-6,"points":[312.56766297096436,267,322.56766297096436,267,451.5,267,451.5,272,580.4323370290357,272,590.4323370290357,272]}
+          ]}
       </textarea>
 
-    </div>
-  </div>
+        </div>
+      </div>
 
 
-  <style>
-    .sampleWrapper {
-      display: flex;
-      flex-direction: column;
-    }
-  </style>
+      <style>
+        .sampleWrapper {
+          display: flex;
+          flex-direction: column;
+        }
+      </style>
 
 
 </body>
