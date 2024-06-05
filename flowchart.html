@@ -7,27 +7,24 @@
 
 <body>
   <script src="https://unpkg.com/gojs@3.0.3/release/go.js"></script>
-  <div class="flex justify-center py-10 flex-col items-center">
-    <div
-      class="flex justify-center p-2 px-12 bg-blue-800 items-center text-blue-100 leading-none lg:rounded-full flex lg:inline-flex">
-      <span class="font-bold mr-2 text-left flex-auto text-4xl">DIAGRAMA DE FLUJO</span>
+  <div class="flex flex-row" style="margin-top: 5%;">
+    <div class= "flex-shrink-0 mx-auto">
+      <div class="bg-blue-800 text-white p-2 px-8 lg:rounded-full justify-center">
+        <span class="font-bold mr-2 text-3xl">DIAGRAMA DE FLUJO</span>
+      </div>
     </div>
-
-    <br>
-    <br>
-    <label for="theme" class="text-xl">Theme:</label>
-    <select id="theme" onchange="changeTheme()" class="mt-2 p-2 border rounded">
-      <option value="system">System</option>
-      <option value="light">Light</option>
-      <option value="dark" selected>Dark</option>
-    </select>
-    <br>
-    <br>
-    <button
-      class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center'
-      onclick="printDiagram()">Print Diagram
-    </button>
+  
+    <div class="theme-container flex items-center" style="position: absolute; padding-left: 1%;">
+      <label for="theme" class="text-lg text-gray-700">Theme:</label>
+      <select id="theme" onchange="changeTheme()" class="ml-2 p-1 border rounded bg-gray-200 text-gray-800 text-sm">
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark" selected>Dark</option>
+      </select>
+      <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-2 rounded inline-flex items-center ml-1 text-sm" onclick="printDiagram()">Print Diagram</button>
+    </div>
   </div>
+  
 
 
   

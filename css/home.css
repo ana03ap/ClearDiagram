@@ -12,6 +12,7 @@ body{
     
     background: url('../images/fondoindex.jpg') repeat center center;
     background-size: cover;
+    margin-bottom: 2%;
 }
 .select {
     display: inline-block;
@@ -97,8 +98,9 @@ body{
 
 .diagram__diagram{
     font-size: 20px;
-    color: var(--color-price);
+    color: black;
     margin-bottom: 8%;
+
 }
 
 .diagram__items{
