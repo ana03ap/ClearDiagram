@@ -36,6 +36,7 @@
 
 <script id="code">
   function init() {
+    if (window.goSamples) goSamples();
     const $ = go.GraphObject.make; // for conciseness in defining templates
 
     myDiagram = new go.Diagram(
@@ -77,7 +78,11 @@
       'Horizontal',
       { margin: new go.Margin(2, 0) },
       $(go.Shape,
-        { desiredSize: new go.Size(15, 15), strokeWidth: 0, margin: new go.Margin(0, 5, 0, 0) },
+        { desiredSize: new go.Size(15, 15), strokeWidth: 0, margin: new go.Margin(0, 5, 0, 0),               
+              fromLinkable: true,
+              toLinkable: true,
+              fromSpot: go.Spot.AllSides,
+              toSpot: go.Spot.AllSides, },
         new go.Binding('figure', 'figure'),
         new go.ThemeBinding('fill', 'color').ofData()
       ),
@@ -89,6 +94,7 @@
       )
     );
 
+    
     
 
     // define the Node template, representing an entity
@@ -106,7 +112,11 @@
       // clear out any desiredSize set by the ResizingTool.
       new go.Binding('desiredSize', 'visible', (v) => new go.Size(NaN, NaN)).ofObject('LIST'),
       // define the node's outer shape, which will surround the Table
-      $(go.Shape, 'RoundedRectangle', { stroke: '#e8f1ff', strokeWidth: 3 }, new go.ThemeBinding('fill', 'primary')),
+      $(go.Shape, 'RoundedRectangle', { stroke: '#e8f1ff', strokeWidth: 3,              
+              fromLinkable: true,
+              toLinkable: true,
+              fromSpot: go.Spot.AllSides,
+              toSpot: go.Spot.AllSides, }, new go.ThemeBinding('fill', 'primary')),
       $(go.Panel,
         'Table',
         { margin: 8, stretch: go.Stretch.Fill },
@@ -190,7 +200,10 @@
     ); // end Node
 
     // define the Link template, representing a relationship
+
+  
     myDiagram.linkTemplate = $(go.Link, // the whole link panel
+      { relinkableFrom: true, relinkableTo: true, reshapable: true,resegmentable: true },
       {
         selectionAdorned: true,
         layerName: 'Background',
@@ -198,9 +211,18 @@
         routing: go.Routing.AvoidsNodes,
         corner: 5,
         curve: go.Curve.JumpOver,
+        // mouse-overs subtly highlight links:
+        mouseEnter: (e, link) => (link.findObject('HIGHLIGHT').stroke = link.diagram.themeManager.findValue('linkOver', 'colors')),
+        mouseLeave: (e, link) => (link.findObject('HIGHLIGHT').stroke = 'transparent'),
+        // context-click creates an editable link label
+        contextClick: (e, link) => {
+          e.diagram.model.commit((m) => {
+            m.set(link.data, 'text', 'Label');
+          });
+        },
       },
       $(go.Shape, // the link shape
-        { stroke: '#f7f9fc', strokeWidth: 3 },
+        { stroke: '#f7f9fc', strokeWidth: 3, fromLinkable: true, toLinkable: true, },
         new go.ThemeBinding('stroke', 'link')
       ),
       $(go.TextBlock, // the "from" label
@@ -297,116 +319,113 @@
       linkDataArray: linkDataArray,
     });
 
-
-
-
     
     // Configurar la paleta
     myPalette = new go.Palette('myPaletteDiv');
 
     // Definir una plantilla de nodo específica para la paleta
-    // Definir una plantilla de nodo específica para la paleta
-myPalette.nodeTemplate =
-  $(go.Node, 'Auto',
-    $(go.Shape, 'RoundedRectangle',
-      {
-        fill: 'white',
-        stroke: null,
-        width: 100,
-        height: 60
-      },
-      new go.Binding('fill', 'color')
-    ),
-    $(go.Panel,
-      'Table',
-      { margin: 8, stretch: go.GraphObject.Fill },
-      $(go.RowColumnDefinition, { row: 0, sizing: go.RowColumnDefinition.None }),
-      // Cabecera de la tabla
-      $(go.TextBlock,
-        {
-          row: 0,
-          alignment: go.Spot.Center,
-          editable: true,
-          margin: new go.Margin(0, 24, 0, 2),
-          font: 'bold 18px sans-serif',
-        },
-        new go.Binding('text', 'key'),
-        new go.ThemeBinding('stroke', 'text')
-      ),
-      // Botón de colapsar/expander
-      $('PanelExpanderButton',
-        'LIST', // el nombre del elemento cuya visibilidad este botón alternará
-        { row: 0, alignment: go.Spot.TopRight },
-        new go.ThemeBinding('ButtonIcon.stroke', 'text')
-      ),
-      $(go.Panel,
-        'Table',
-        { name: 'LIST', row: 1, alignment: go.Spot.TopLeft },
-        $(go.TextBlock,
-          'Attributes',
+    
+    myPalette.nodeTemplate =
+    $(go.Node, 'Auto',
+        $(go.Shape, 'RoundedRectangle', // Cambiar la forma a un círculo
           {
-            row: 0,
-            alignment: go.Spot.Left,
-            margin: new go.Margin(3, 24, 3, 2),
-            font: 'bold 15px sans-serif',
-            editable: true,
-            stroke: '#ffffff' // Color blanco para el texto
+            fromLinkable: true,
+            toLinkable: true,
+            fill: 'white',
+            stroke: "black",
+            width: 200, // Reducir el tamaño del nodo
+            height: 250,
           },
-          new go.ThemeBinding('stroke', 'text')
-        ),
-        $('PanelExpanderButton', 'NonInherited', { row: 0, alignment: go.Spot.Right }, new go.ThemeBinding('ButtonIcon.stroke', 'text')),
-        $(go.Panel,
-          'Vertical',
-          {
-            row: 1,
-            name: 'NonInherited',
-            alignment: go.Spot.TopLeft,
-            defaultAlignment: go.Spot.Left,
-            itemTemplate: itemTempl,
-          },
-          new go.Binding('itemArray', 'items')
-        ),
-        $(go.TextBlock,
-          'Inherited Attributes',
-          {
-            row: 2,
-            alignment: go.Spot.Left,
-            margin: new go.Margin(3, 24, 3, 2),
-            font: 'bold 15px sans-serif',
-            editable: true,
-          },
-          new go.Binding('visible', 'inheritedItems', (arr) => Array.isArray(arr) && arr.length > 0),
-          new go.ThemeBinding('stroke', 'text')
-        ),
-        $('PanelExpanderButton',
-          'Inherited',
-          { row: 2, alignment: go.Spot.Right },
-          new go.Binding('visible', 'inheritedItems', (arr) => Array.isArray(arr) && arr.length > 0),
-          new go.ThemeBinding('ButtonIcon.stroke', 'text')
+          new go.Binding('fill', 'color')
         ),
         $(go.Panel,
-          'Vertical',
-          {
-            row: 3,
-            name: 'Inherited',
-            alignment: go.Spot.TopLeft,
-            defaultAlignment: go.Spot.Left,
-            itemTemplate: itemTempl,
-          },
-          new go.Binding('itemArray', 'inheritedItems')
-        ),
-      )
-    ) // termina Panel
-  ); // termina Node
-
-
-
-
+          'Table',
+          { margin: 8, stretch: go.GraphObject.Fill },
+          $(go.RowColumnDefinition, { row: 0, sizing: go.RowColumnDefinition.None }),
+          // Cabecera de la tabla
+          $(go.TextBlock,
+            {
+              row: 0,
+              alignment: go.Spot.Center,
+              editable: true,
+              margin: new go.Margin(0, 24, 0, 2),
+              font: 'bold 18px sans-serif',
+            },
+            new go.Binding('text', 'key'),
+            new go.ThemeBinding('stroke', 'text')
+          ),
+          // Botón de colapsar/expander
+          $('PanelExpanderButton',
+            'LIST', // el nombre del elemento cuya visibilidad este botón alternará
+            { row: 0, alignment: go.Spot.TopRight },
+            new go.ThemeBinding('ButtonIcon.stroke', 'text')
+          ),
+          $(go.Panel,
+            'Table',
+            { name: 'LIST', row: 1, alignment: go.Spot.TopLeft },
+            $(go.TextBlock,
+              'Attributes',
+              {
+                row: 0,
+                alignment: go.Spot.Left,
+                margin: new go.Margin(3, 24, 3, 2),
+                font: 'bold 15px sans-serif',
+                editable: true,
+                stroke: '#ffffff' // Color blanco para el texto
+              },
+              new go.ThemeBinding('stroke', 'text')
+            ),
+            $('PanelExpanderButton', 'NonInherited', { row: 0, alignment: go.Spot.Right }, new go.ThemeBinding('ButtonIcon.stroke', 'text')),
+            $(go.Panel,
+              'Vertical',
+              {
+                row: 1,
+                name: 'NonInherited',
+                alignment: go.Spot.TopLeft,
+                defaultAlignment: go.Spot.Left,
+                itemTemplate: itemTempl,
+              },
+              new go.Binding('itemArray', 'items')
+            ),
+            $(go.TextBlock,
+              'Inherited Attributes',
+              {
+                row: 2,
+                alignment: go.Spot.Left,
+                margin: new go.Margin(3, 24, 3, 2),
+                font: 'bold 15px sans-serif',
+                editable: true,
+              },
+              new go.Binding('visible', 'inheritedItems', (arr) => Array.isArray(arr) && arr.length > 0),
+              new go.ThemeBinding('stroke', 'text')
+            ),
+            $('PanelExpanderButton',
+              'Inherited',
+              { row: 2, alignment: go.Spot.Right },
+              new go.Binding('visible', 'inheritedItems', (arr) => Array.isArray(arr) && arr.length > 0),
+              new go.ThemeBinding('ButtonIcon.stroke', 'text')
+            ),
+            $(go.Panel,
+              'Vertical',
+              {
+                row: 3,
+                name: 'Inherited',
+                alignment: go.Spot.TopLeft,
+                defaultAlignment: go.Spot.Left,
+                itemTemplate: itemTempl,
+              },
+              new go.Binding('itemArray', 'inheritedItems')
+            ),
+          )
+        ), // termina Panel
+      ); // termina Node
+    
+      
 
     // Datos de la paleta
     myPalette.model = new go.GraphLinksModel([
       {
-        key: 'Node',
+        key: 'Class',
         items: [
           { name: 'ProductID', iskey: true, figure: 'Decision', color: 'purple' },
           { name: 'ProductName', iskey: false, figure: 'Hexagon', color: 'blue' },
