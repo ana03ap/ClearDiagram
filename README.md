@@ -1,8 +1,11 @@
-## <p><strong><span style="color: navy;">Diagram</span></strong></p>
+# ClearDiagram
+
 ClearDiagram is a web application that allows users to easily and quickly create mind maps, requirement models, and flowcharts. The tool provides an intuitive and user-friendly interface, enabling users to select a template, edit it according to their needs, and export the final result.
 
-## Can I use ClearDiagram?
-![Students]([https://example.com/path/to/diagram.png](https://cdn-icons-png.freepik.com/512/46/46285.png)
+![Students](https://cdn-icons-png.freepik.com/512/46/46285.png)
+
+<p>Clear<strong><span style="color: navy;">Diagram</span></strong></p>
+
 
 En el futuro, nuestro objetivo es implementar una serie de funcionalidades adicionales para mejorar y expandir la plataforma. Estas incluyen:
 
