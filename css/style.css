@@ -55,7 +55,7 @@ body {
 /*Estilo del botón de llamada a la acción*/
 .cta {
     display: inline-block;
-    background-color: #33C5A2;
+    background-color: rgb(33, 42, 65);
     color: #000000;
     text-decoration: none;
     padding: 20px 80px;
@@ -66,7 +66,7 @@ body {
 }
 
 .cta:hover {
-    background-color: #6ecfb8;
+    background-color: rgb(46, 53, 68);
 }
 
 

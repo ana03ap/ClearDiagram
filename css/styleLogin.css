@@ -1,115 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kaushan+Script&display=swap');
 
-/* Reset y estilos básicos */
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'DM Sans', sans-serif;
-    height: 100vh; 
-    background-color: rgb(202, 202, 202);
-} */
-
-/* 
-.text-container {
-    position: relative;
-    text-align: center;
-    background-color: none;
-}
-
-
-.button-container {
-    position: relative;
-    text-align: center;
-    z-index: 2
-}
-
-
-.cta {
-    display: inline-block;
-    background-color: #33C5A2;
-    color: #000000;
-    text-decoration: none;
-    padding: 20px 80px;
-    border-radius: 32px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.cta:hover {
-    background-color: #6ecfb8;
-}
-
-
-.signup-text {
-    font-size: 16px;
-    color: black;
-}
-
-.signup-text a { 
-    color: #33C5A2;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.signup-text a:hover {
-    text-decoration: underline;
-}
-
-
-
-.hero__titleLogin {
-    font-size: 72px;
-    color: black;
-    font-family: 'Kaushan Script', cursive;
-    font-weight: 400;
-    font-style: normal;
-    margin-bottom: 200px; 
-}
-
-
-
-.imageLogin-container {
-    position: absolute; 
-    width: 100%;
-    height: 70vh; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.imgLogin {
-    position: absolute; 
-    width: 100%;
-    height: 100%; 
-    background: url('../images/fondoindex.jpg') no-repeat center center;
-    background-size: cover;
-    filter: brightness(0.9); 
-    box-shadow: 0 0 20px rgba(163, 157, 157, 0.34);
-}
-
-.Loginbox {
-    position: absolute;
-    top: 90%; 
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    background-color: #ffffff; 
-    padding: 190px 300px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
-    z-index: 1;
-    
-}
-
- */
-
-
 
 
  *{
@@ -141,7 +31,7 @@ body {
 
 
  ::selection{
-   background: #33C5A2;
+   background: rgb(20, 30, 55);
    color: #fff;
  }
 
@@ -209,8 +99,8 @@ body {
    left: 0;
    z-index: 0;
    border-radius: 15px;
-   background: -webkit-linear-gradient(left,#55b9a2,#52a592,#6ecfb8
- , #7bebd0);
+   background: -webkit-linear-gradient(left,rgb(20, 30, 55),rgb(33, 42, 65),rgb(46, 53, 68)
+ , rgb(64, 75, 99));
    transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
  }
  input[type="radio"]{
@@ -263,7 +153,7 @@ body {
    transition: all 0.3s ease;
  }
  .form-inner form .field input:focus{
-   border-color: #065745;
+   border-color: rgb(22, 30, 48);
 
  }
  .form-inner form .field input::placeholder{
@@ -271,7 +161,7 @@ body {
    transition: all 0.3s ease;
  }
  form .field input:focus::placeholder{
-   color: #065745;
+   color: rgb(22, 30, 48);
  }
  .form-inner form .pass-link{
    margin-top: 5px;
@@ -282,7 +172,7 @@ body {
  }
  .form-inner form .pass-link a,
  .form-inner form .signup-link a{
-   color: #065745;
+   color: rgb(22, 30, 48);
    text-decoration: none;
  }
  .form-inner form .pass-link a:hover,
@@ -301,8 +191,8 @@ body {
    width: 300%;
    position: absolute;
    left: -100%;
-   background: -webkit-linear-gradient(left,#55b9a2,#52a592,#6ecfb8
- , #7bebd0);
+   background: -webkit-linear-gradient(left,rgb(20, 30, 55),rgb(33, 42, 65),rgb(46, 53, 68)
+ , rgb(64, 75, 99));
    border-radius: 15px;
    transition: all 0.4s ease;;
  }
