@@ -11,7 +11,7 @@
 ClearDiagram is a web application that allows users to easily and quickly create mind maps, requirement models, and flowcharts. The tool provides an intuitive and user-friendly interface, enabling users to select a template, edit it according to their needs, and export the final result.
 
 
-## Built whit
+## Build whit
 ![HTML](https://img.shields.io/badge/Html-20232A?style=for-the-badge&logo=html5&logoColor=orange&color=white)
 ![CSS](https://img.shields.io/badge/CSS-20232A?style=for-the-badge&logo=css3&logoColor=%233899e3&color=white)
 ![JS](https://img.shields.io/badge/JS-20232A?style=for-the-badge&logo=JavaScript&logoColor=yellow&color=white)
