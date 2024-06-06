@@ -1,27 +1,45 @@
-# ClearDiagram
+
+<a name="readme-top"></a>
+
+<h1 align="center">ClearDiagram</h1>
 
 ClearDiagram is a web application that allows users to easily and quickly create mind maps, requirement models, and flowcharts. The tool provides an intuitive and user-friendly interface, enabling users to select a template, edit it according to their needs, and export the final result.
 
-![Students](https://cdn-icons-png.freepik.com/512/46/46285.png)
+## Who can use ClearDiagram?
+<div style="display: flex; flex-direction: row;">
+  <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png" alt="Students" width="100" height="100" padding = 10px>  
+  <img src="https://cdn-icons-png.flaticon.com/512/305/305988.png" alt="Graduates" width="100" height="100">
+  <img src="https://cdn-icons-png.freepik.com/512/878/878719.png" alt="Everyone" width="100" height="100">
+</div>
 
-<p>Clear<strong><span style="color: navy;">Diagram</span></strong></p>
 
+## How can I use ClearDiagram? Just follow the steps! 👀😽
 
-En el futuro, nuestro objetivo es implementar una serie de funcionalidades adicionales para mejorar y expandir la plataforma. Estas incluyen:
+1. Visit the following link:
+    ```sh
+   https://ana03ap.github.io/ClearDiagram/
+   ```
+2. Click on the START button.
+3. You need to create your user account or sign in to continue to the main menu.
+4. Once logged in, you will be redirected to the template selection page. Here, you can choose the type of model you want to create: mind map, requirement model, or flowchart.
+5. After selecting a template, you can begin editing it according to your needs. Use the editing tools provided to add nodes, connections, and details to fit the model.
 
-- **Diversificación de Diagramas:** Introducción de una variedad más amplia de tipos de diagramas para satisfacer diversas necesidades y casos de uso.
-- **Ediciones Colaborativas:** Desarrollo de capacidades que permitan la edición colaborativa en tiempo real de los diagramas, facilitando el trabajo en equipo y la productividad.
-- **Ampliación de Herramientas de Edición:** Incorporación de más herramientas y opciones avanzadas de edición para proporcionar a los usuarios una mayor flexibilidad y control sobre sus diagramas.
-- **Almacenamiento Personalizado:** Implementación de un sistema de almacenamiento que permita a los usuarios guardar y gestionar sus diagramas individualmente, asegurando un acceso seguro y personalizado a sus proyectos.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Pasos para la ejecución del programa: 
-1. Ingresar al siguiente link: https://ana03ap.github.io/ClearDiagram/ y posterior a esto encontrará un botón de START al que deberá darle click.
-2. Deberá crear su usuario o de lo contrario crearlo para continuar con el menú principal. 
-3. Una vez que hayas iniciado sesión, serás redirigido a la página de selección de plantillas. Aquí puedes elegir el tipo de modelo que deseas crear: mapa mental, modelo de requerimientos o diagrama de flujo. 
-4. Después de seleccionar una plantilla, podrás comenzar a editarla según tus necesidades. Utiliza las herramientas de edición proporcionadas para agregar nodos, conexiones y detalles según el modelo. 
+# In the future... 🔜
+In the future, our goal is to implement additional functionalities to enhance and expand the platform. These include:
 
-### Realizado por:
+- [ ] Introducing a wider variety of diagram types to meet various needs and use cases.
+- [ ] Developing capabilities for real-time collaborative editing of diagrams, facilitating teamwork and productivity.
+- [ ] Adding more advanced editing tools and options to provide users with greater flexibility and control over their diagrams.
+- [ ] Implementing a storage system that allows users to save and manage their diagrams individually, ensuring secure and personalized access to their projects.
+      
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Creators:
 - María Camila Gómez Blanquicett
 - Emily Johanna Roldán Ripoll
 - Ana María Ardila Pacheco
 - Darwin Daniel Charris Hernández
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
