@@ -1,7 +1,8 @@
-## ClearDiagram
-Aplicación web que permite a los usuarios crear mapas mentales, modelos de requerimientos y diagramas de Flujo de manera fácil y rápida. 
-La herramienta proporciona una interfaz intuitiva y amigable que permite a los usuarios seleccionar una plantilla, editarla según sus necesidades y exportar el resultado final.
-ClearDiagram es útil para estudiantes, profesionales y cualquier persona que necesite visualizar y organizar sus ideas de forma clara y estructurada.
+## <p><strong><span style="color: navy;">Diagram</span></strong></p>
+ClearDiagram is a web application that allows users to easily and quickly create mind maps, requirement models, and flowcharts. The tool provides an intuitive and user-friendly interface, enabling users to select a template, edit it according to their needs, and export the final result.
+
+## Can I use ClearDiagram?
+![Students]([https://example.com/path/to/diagram.png](https://cdn-icons-png.freepik.com/512/46/46285.png)
 
 En el futuro, nuestro objetivo es implementar una serie de funcionalidades adicionales para mejorar y expandir la plataforma. Estas incluyen:
 
