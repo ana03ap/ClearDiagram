@@ -3,6 +3,11 @@
 
 <h1 align="center">ClearDiagram</h1>
 
+<video width="320" height="240" controls>
+  <source src="demo.mp4" type="video/mp4">
+</video>
+
+
 ClearDiagram is a web application that allows users to easily and quickly create mind maps, requirement models, and flowcharts. The tool provides an intuitive and user-friendly interface, enabling users to select a template, edit it according to their needs, and export the final result.
 
 
