@@ -280,4 +280,32 @@ function init() {
     // if any nodes don't have locations assigned from the model, force a layout of everything
     if (myDiagram.nodes.any(n => !n.location.isReal())) layoutAll();
   }
+
+  // print the diagram by opening a new window holding SVG images of the diagram contents for each page
+  function printDiagram() {
+    const svgWindow = window.open();
+    if (!svgWindow) return; // failure to open a new Window
+    svgWindow.document.title = "GoJS Flowchart";
+    svgWindow.document.body.style.margin = "0px";
+    const printSize = new go.Size(900, 1960);
+    const bnds = myDiagram.documentBounds;
+    let x = bnds.x;
+    let y = bnds.y;
+    while (y < bnds.bottom) {
+      while (x < bnds.right) {
+        const svg = myDiagram.makeSvg({
+          scale: 1.0,
+          position: new go.Point(x, y),
+          size: printSize,
+          background: myDiagram.themeManager.findValue('div', 'colors'),
+        });
+        svgWindow.document.body.appendChild(svg);
+        x += printSize.width;
+      }
+      x = bnds.x;
+      y += printSize.height;
+    }
+    setTimeout(() => { svgWindow.print(); svgWindow.close(); }, 1);
+  }
+  
   window.addEventListener('DOMContentLoaded', init);
