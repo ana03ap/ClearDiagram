@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: rgb(20, 30, 55)">
+<meta charset="UTF-8">
+<title>Network diagram GoJS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+<div id="allSampleContent" class="p-4 w-full">
+
+  <script src="https://unpkg.com/gojs@3.0.3/release/go.js"></script>
+  <div class="flex flex-row" style="margin-top: 5%;">
+    <div class= "flex-shrink-0 mx-auto">
+      <div class="bg-blue-800 text-white p-2 px-8 lg:rounded-full justify-center">
+        <span class="font-bold mr-2 text-3xl">Network diagram </span>
+      </div>
+    </div>
+  
+    <div class="theme-container flex items-center" style="position: absolute; padding-left: 1%;">
+      
+      <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-2 rounded inline-flex items-center ml-1 text-sm" onclick="printDiagram()">Print Diagram</button>
+    </div>
+  </div>
+
+
+
+  <div id="sample">
+    <div style="width: 100%; display: flex; justify-content: space-between">
+      <!-- The DIV for the Diagram needs an explicit size or else we won't see anything.
+       This also adds a border to help see the edges of the viewport. -->
+      <div id="myPaletteDiv"
+        style="width: 100px; margin-right: 2px; border: 5px solid black; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255); background-color: white;">
+        <canvas tabindex="0" width="98" height="448"
+          style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 98px; height: 448px;"></canvas>
+        <div style="position: absolute; overflow: auto; width: 98px; height: 448px; z-index: 1;">
+          <div style="position: absolute; width: 1px; height: 1px;"></div>
+        </div>
+      </div>
+      <div id="myDiagramDiv"
+        style="border: 5px solid black; flex-grow: 1; height: 450px; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255); cursor: auto; background-color: white;">
+        <canvas tabindex="0" width="1144" height="448"
+          style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; width: 1144px; height: 448px; cursor: auto;"></canvas>
+        <div style="position: absolute; overflow: auto; width: 1144px; height: 448px; z-index: 1;">
+          <div style="position: absolute; width: 1px; height: 1px;"></div>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+    <div class="flex justify-center py-10">
+      <div
+        class="flex justify-center p-2 px-12 bg-blue-800 items-center text-blue-100 leading-none lg:rounded-full flex lg:inline-flex">
+        <span class="px-2 font-bold mr-2 text-left flex-auto text-4xl">Diagram Model saved in JSON format</span>
+      </div>
+    </div>
+
+    <div class="inline-flex">
+      <button class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l' id="SaveButton"
+        onclick="save()">Save</button>
+      <button class='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r'
+        onclick="load()">Load</button>
+    </div>
+
+  
+        
+    <pre><div id="modelJson" style="width:100%; background-color: white; border: 2px solid black;" >{
+  "class": "go.GraphLinksModel",
+  "nodeDataArray": [
+    { "key": 0, "type": "Cloud", "loc": "0 0", "text": "Internet" },
+    { "key": 1, "type": "Firewall", "loc": "100 0" },
+    { "key": 2, "type": "Router", "loc": "200 0" },
+    { "key": 3, "type": "Server", "loc": "300 0" },
+    { "key": 4, "type": "Switch", "loc": "200 100" },
+    { "key": 5, "type": "Firewall", "loc": "25 100" },
+    { "key": 6, "type": "Router", "loc": "25 200" },
+    { "key": 7, "type": "Switch", "loc": "400 100" },
+
+    { "key": 10, "isGroup": true, "text": "Intranet 1" },
+    { "key": 11, "type": "PC", "loc": "150 220", "group": 10 },
+    { "key": 12, "type": "PC", "loc": "250 220", "group": 10 },
+    { "key": 13, "type": "PC", "loc": "150 270", "group": 10 },
+    { "key": 14, "type": "PC", "loc": "250 270", "group": 10 },
+
+    { "key": 20, "isGroup": true, "text": "Intranet 2" },
+    { "key": 21, "type": "PC", "loc": "350 220", "group": 20 },
+    { "key": 22, "type": "PC", "loc": "450 220", "group": 20 },
+    { "key": 23, "type": "PC", "loc": "350 270", "group": 20 },
+    { "key": 24, "type": "PC", "loc": "450 270", "group": 20 },
+
+    { "key": 30, "isGroup": true, "text": "Isolation test" },
+    { "key": 31, "type": "PC", "loc": "-100 172", "group": 30 },
+    { "key": 32, "type": "PC", "loc": "-100 242", "group": 30 }
+  ],
+  "linkDataArray": [
+    { "from": 0, "to": 1 },
+    { "from": 1, "to": 2 },
+    { "from": 2, "to": 3 },
+    { "from": 2, "to": 4 },
+    { "from": 5, "to": 4 },
+    { "from": 5, "to": 6 },
+    { "from": 4, "to": 7 },
+    { "from": 4, "to": 10 },
+    { "from": 7, "to": 20 },
+    { "from": 6, "to": 30 }
+  ]
+}</div></pre>
+
+
+    <script id="code">
+      var myDiagram;
+      var myPalette;
+
+      function init() {
+        myDiagram = new go.Diagram(
+          'myDiagramDiv', // create a Diagram for the HTML Div element
+          {
+            'commandHandler.archetypeGroupData': { isGroup: true, text: 'Subnet' },
+            'undoManager.isEnabled': true,
+          }
+        ); // enable undo & redo
+
+        myDiagram.nodeTemplate = new go.Node('Spot', {
+          locationSpot: go.Spot.Center,
+          locationObjectName: 'BODY',
+          selectionObjectName: 'BODY',
+        })
+          .bindTwoWay('location', 'loc', go.Point.parse, go.Point.stringify)
+          .add(
+            new go.Picture({
+              name: 'BODY',
+              width: 50,
+              height: 50,
+              portId: '',
+              fromLinkable: true,
+              toLinkable: true,
+              cursor: 'pointer',
+            }).bind('source', 'type', (t) => `images/network/${t.toLowerCase()}.svg`),
+            new go.Shape({
+              width: 25,
+              height: 25,
+              fill: 'transparent',
+              strokeWidth: 0,
+            })
+          );
+
+        myDiagram.groupTemplate = new go.Group('Vertical', {
+          locationSpot: go.Spot.Center,
+          padding: 5, // to push the port out
+        }).add(
+          new go.TextBlock({
+            alignment: go.Spot.Left,
+            font: '12px georgia',
+            editable: true,
+          }).bindTwoWay('text'),
+          new go.Panel('Auto').add(
+            new go.Shape('RoundedRectangle', {
+              strokeDashArray: [2, 6],
+              stroke: '#333',
+              fill: 'rgba(0,0,0,0)',
+            }),
+            new go.Placeholder({ padding: 5 })
+          )
+        );
+
+        myPalette = new go.Palette('myPaletteDiv', {
+          nodeTemplateMap: myDiagram.nodeTemplateMap,
+          layout: new go.GridLayout({
+            cellSize: new go.Size(2, 2),
+            isViewportSized: true,
+          }),
+        });
+
+        myPalette.model.nodeDataArray = [{ type: 'Cloud' }, { type: 'Firewall' }, { type: 'Switch' }, { type: 'Server' }, { type: 'Router' }, { type: 'PC' }];
+
+        myDiagram.linkTemplate = new go.Link({
+          routing: go.Routing.Orthogonal,
+          fromSpot: go.Spot.AllSides,
+          toSpot: go.Spot.AllSides,
+          relinkableFrom: true,
+          relinkableTo: true,
+        })
+          .add(new go.Shape({ strokeWidth: 1.5, stroke: 'red' }))
+          .add(new go.Shape({ strokeWidth: 0, fill: 'red', scale: 0.7, fromArrow: 'circle' }))
+          .add(new go.Shape({ strokeWidth: 0, fill: 'red', scale: 0.7, toArrow: 'circle' }));
+
+        load();
+      }
+
+      function save() {
+        const json = document.getElementById('modelJson');
+        json.textContent = myDiagram.model.toJson();
+        myDiagram.isModified = false;
+      }
+
+      function load() {
+        const json = document.getElementById('modelJson');
+        myDiagram.model = go.Model.fromJson(json.textContent);
+      }
+
+      window.addEventListener('DOMContentLoaded', init);
+    </script>
+
+
+
+</html>

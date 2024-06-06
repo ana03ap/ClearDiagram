@@ -56,7 +56,7 @@ body {
 .cta {
     display: inline-block;
     background-color: rgb(33, 42, 65);
-    color: #000000;
+    color: white;
     text-decoration: none;
     padding: 20px 80px;
     border-radius: 32px;
@@ -73,7 +73,7 @@ body {
 /* Estilo del título cleardiagram para el login*/
 .hero__titleLogin {
     font-size: 72px;
-    color: black;
+    color: white;
     font-family: 'Kaushan Script', cursive;
     font-weight: 400;
     font-style: normal;
